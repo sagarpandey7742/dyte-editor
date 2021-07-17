@@ -7,6 +7,9 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+// import PasteClient from "pastebin-api";
+import storage from '../storage/storage';
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -49,9 +52,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// Pastebin section
+// const client = new PasteClient("ZLuX_-fmkE6nu0uwtY0jCeb3YBRMVi9_");
+
 
 function App() {
 
+  // function getUrl(html, css, js){
+  //   let code=""
+
+  //   code="<html>".concat("<body>", html , "</body>","<style>", css, "</style>","<script>", js, "</script>","</html>")
+
+  //   console.log(code);
+
+  //   const url = client.createPaste({
+  //     code: code,
+  //     expireDate: "N",
+  //     format: "HTML 5",
+  //     name: "something.html",
+  //     publicity: 0,
+  //   });
+    
+  //   console.log(url);
+  // }
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -59,11 +82,10 @@ function App() {
     setValue(newValue);
   };
 
-  const [html, setHtml] = useState('<h1>Sagar Pandey 18BCE1002</h1>')
-  const [css, setCss] = useState('body{ color: purple }')
-  const [js, setJs] = useState("document.body.style.background='#E3F1E6'")
+  const [html, setHtml] = storage('html', '<h1>Sagar Pandey 18BCE1002</h1>')
+  const [css, setCss] = storage('css', 'body{ color: purple }')
+  const [js, setJs] = storage('js', "document.body.style.background='#E3F1E6'")
   const [srcDoc, setSrcDoc] = useState('')
-
   useEffect(() => {
     const timeout = setTimeout(() => {
       setSrcDoc(`

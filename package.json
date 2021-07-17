@@ -1,5 +1,6 @@
 {
   "homepage": "http://sagarpandey7742.github.io/dyte-editor",
+  "proxy": "https://cors-anywhere.herokuapp.com/",
   "name": "dyte-editor",
   "version": "0.1.0",
   "private": true,
@@ -11,8 +12,11 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.21.1",
     "codemirror": "^5.57.0",
+    "cors": "^2.8.5",
     "gh-pages": "^3.2.3",
+    "pastebin-api": "^2.2.0",
     "react": "^16.13.1",
     "react-codemirror2": "^7.2.1",
     "react-dom": "^16.13.1",
@@ -32,9 +36,9 @@
       "react-app/jest"
     ]
   },
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "development": [
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version"
+  ]
+}
